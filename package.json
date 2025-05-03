@@ -1,0 +1,22 @@
+{
+  "name": "kratos-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "express.js": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-modules": "^1.0.1"
+  }
+}

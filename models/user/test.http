@@ -1,0 +1,19 @@
+GET http://localhost:5500/api/user/all
+###
+GET http://localhost:5500/api/user/single/Yt6Dp8QwMn9A
+###
+POST http://localhost:5500/api/user/create
+Content-Type: application/json
+{
+    "id": 21,
+    "firstname": "Ibrahem",
+    "lastname": "Abu Shah",
+    "username": "ibrah.gymbro",
+    "age": 24,
+    "email": "ibrahemmad91@gmail.com",
+    "password": "Joker525252",
+    "role": "athlete",
+    "isAdmin": true
+}
+
+

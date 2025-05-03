@@ -1,0 +1,35 @@
+GET http://localhost:8080/api/user/all
+###
+GET http://localhost:8080/api/user/single/bib6Vej2sByg
+###
+POST http://localhost:8080/api/user/create
+Content-Type: application/json
+
+{
+    "firstname": "Abed",
+    "lastname": "Shah",
+    "username": "abood.233",
+    "age": 12,
+    "email": "abed@gmail.com",
+    "password": "abed525252",
+    "role": "coach",
+    "isAdmin": false
+}
+###
+PUT http://localhost:8080/api/user/update/Q29IzQmmVgpC
+Content-Type: application/json
+
+{
+    "requestType": "updatePassword",
+    "password": "Ammar22",
+    "newPassword": "Ammar5050"
+}
+###
+PUT http://localhost:8080/api/user/update/Q29IzQmmVgpC
+Content-Type: application/json
+
+{
+    "requestType": "updateEmail",
+    "password": "Ammar5050",
+    "newEmail": "ammarNew@gamil.com"
+}

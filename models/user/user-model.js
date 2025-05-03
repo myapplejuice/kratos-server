@@ -1,14 +1,5 @@
 
-import { allUsers, singleUser, insertUser } from "./user-db.js";
-
-export async function fetchUsers(id) {
-    if (!id) return await allUsers()
-    else return await singleUser(id)
-}
-
-export async function newUser(user) {
-    return await insertUser(user)
-}
+import { allUsers, singleUser, insertUser, updateUser} from "./user-db.js";
 
 export default class User {
     constructor(id, username, firstname, lastname, age, email, password, role, isAdmin = false) {
@@ -18,8 +9,24 @@ export default class User {
         this.lastname = lastname;
         this.age = age;
         this.email = email;
-        this.password = bcrypt.hashSync(password, 15);
+        this.password = password;
         this.role = role;
         this.isAdmin = isAdmin;
+    }
+    
+    static async adjustUser(id, updateRequest) {
+        if (updateRequest.requestType == 'updatePassword') 
+            return await updateUser(0 ,id, updateRequest.password, updateRequest.newPassword)
+        else if (updateRequest.requestType == 'updateEmail')
+            return await updateUser(1, id, updateRequest.password, updateRequest.newEmail)
+    }
+
+    static async fetchUsers(id) {
+        if (!id) return await allUsers()
+        else return await singleUser(id)
+    }
+    
+    static async newUser(user) {
+        return await insertUser(user)
     }
 }

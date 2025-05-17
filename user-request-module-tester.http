@@ -1,0 +1,72 @@
+@HOST = http://localhost:8080/api/v1/user
+
+GET {{HOST}}/all
+Content-Type: application/json
+
+{
+    "id": "eQkZAyydy6QQ",
+    "username": "khaled.20202",
+    "firstname": "Khaled",
+    "lastname": "Shah",
+    "age": 12,
+    "email": "khaled@gmail.com",
+    "role": "coach",
+    "isAdmin": true
+}
+###
+GET {{HOST}}/single/Mw1Qs9XkVr3E
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiTXcxUXM5WGtWcjNFIiwiZmlyc3RuYW1lIjoiRGFuaWVsIiwibGFzdG5hbWUiOiJIYXJyaXMiLCJ1c2VybmFtZSI6ImRhbmllbC5oYXJyaXM3OSIsImFnZSI6MzksImVtYWlsIjoiZGFuaWVsLmhhcnJpc0BleGFtcGxlLmNvbSIsInJvbGUiOiJjb2FjaCIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE3NDc1MDEzNDF9.GZXw5mlRkbAv24j0nSIZRp_o1K7icROJR5zf06NAbLM
+
+###`
+POST {{HOST}}/create
+Content-Type: application/json
+
+{
+    "username": "abdool",
+    "firstname": "Ibrahem",
+    "lastname": "Abu Shah",
+    "age": 24,
+    "email": "ibrahemmad61@gmail.com",
+    "password": "Joker525252",
+    "role": "coach",
+    "isAdmin": true
+}
+###
+POST {{HOST}}/login
+Content-Type: application/json
+
+{
+    "authentication": "khaled.20202",
+    "password": "somsom525252"
+}
+###
+POST {{HOST}}/login
+Content-Type: application/json
+
+{
+    "authentication": "abed@gmail.com",
+    "password": "khaled52525"
+}
+###
+PUT {{HOST}}/update/eQkZAyydy6QQ
+Content-Type: application/json
+
+{
+    "requestType": 0,
+    "password": "khaled525252",
+    "update": "somsom525252"
+}
+###
+PUT {{HOST}}/update/eQkZAyydy6QQ
+Content-Type: application/json
+
+{
+    "requestType": 1,
+    "password": "somsom525252",
+    "update": "khaled@gmail.com"
+}
+###
+DELETE {{HOST}}/delete/Q29IzQmmVgpC
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiTXcxUXM5WGtWcjNFIiwiZmlyc3RuYW1lIjoiRGFuaWVsIiwibGFzdG5hbWUiOiJIYXJyaXMiLCJ1c2VybmFtZSI6ImRhbmllbC5oYXJyaXM3OSIsImFnZSI6MzksImVtYWlsIjoiZGFuaWVsLmhhcnJpc0BleGFtcGxlLmNvbSIsInJvbGUiOiJjb2FjaCIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE3NDc1MDEzNDF9.GZXw5mlRkbAv24j0nSIZRp_o1K7icROJR5zf06NAbLM
+###
+DELETE {{HOST}}/dee/

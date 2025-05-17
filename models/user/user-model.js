@@ -1,8 +1,7 @@
-
-import { allUsers, singleUser, insertUser, updateUser} from "./user-db.js";
+import UserDB from "./user-db.js";
 
 export default class User {
-    constructor(id, username, firstname, lastname, age, email, password, role, isAdmin = false) {
+    constructor(id, username, firstname, lastname, age, email, password, role, isModerator = false, isAdmin = false) {
         this.id = id;
         this.username = username;
         this.firstname = firstname;
@@ -11,22 +10,28 @@ export default class User {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.isModerator = isModerator;
         this.isAdmin = isAdmin;
     }
-    
-    static async adjustUser(id, updateRequest) {
-        if (updateRequest.requestType == 'updatePassword') 
-            return await updateUser(0 ,id, updateRequest.password, updateRequest.newPassword)
-        else if (updateRequest.requestType == 'updateEmail')
-            return await updateUser(1, id, updateRequest.password, updateRequest.newEmail)
+
+    static async updateUser(id, request) {
+        return await UserDB.updateUser(request.requestType, id, request.password, request.update)
     }
 
-    static async fetchUsers(id) {
-        if (!id) return await allUsers()
-        else return await singleUser(id)
+    static async getUsers(id) {
+        if (!id) return await UserDB.allUsers()
+        else return await UserDB.singleUser(id)
     }
-    
-    static async newUser(user) {
-        return await insertUser(user)
+
+    static async createUser(user) {
+        return await UserDB.insertUser(user)
+    }
+
+    static async loginUser(credentials) {
+        return await UserDB.selectUser(credentials)
+    }
+
+    static JSONParse(user) {
+        return new User(user.id, user.username, user.firstname, user.lastname, user.age, user.email, user.password, user.role, user.isAdmin)
     }
 }

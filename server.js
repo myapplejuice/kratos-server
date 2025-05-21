@@ -24,10 +24,6 @@ SERVER.use('/api/v1', V1_ROUTER)
 
 //ERROR HANDLER
 SERVER.use((req, res, next) => {
-  req.setTimeout(0); // Disable request timeout
-  next();
-});
-SERVER.use((req, res, next) => {
     res.status(404).json({ message: 'Route not found' });
 });
 SERVER.use(errorHandler)

@@ -220,49 +220,15 @@
     "isAdmin": false
   },
   {
-    "id": "8if5x7ueJoZs",
-    "username": "abood.233",
-    "firstname": "Khaled",
-    "lastname": "Shah",
-    "age": 12,
-    "email": "abed@gmail.com",
-    "password": "$2b$15$BPkkqEN23OFjpGJEoEpLB.OlSHVhb7tH83.kvThENvH5aIrU4KbA2",
-    "role": "coach",
-    "isAdmin": false
-  },
-  {
-    "id": "eQkZAyydy6QQ",
-    "username": "khaled.20202",
-    "firstname": "Khaled",
-    "lastname": "Shah",
-    "age": 12,
-    "email": "khaled@gmail.com",
-    "password": "$2b$15$4C0Wl2G5shnM2w/I0YDvd.nt1xY7Lt6qKAPIm3jDH8CnMv8cuYsbG",
-    "role": "coach",
-    "isAdmin": false
-  },
-  {
-    "id": "nJ7m7pZs4HcJ",
-    "username": "fatli",
+    "id": "Gbq8SYKPooRH",
+    "username": "ShohoKlolo255",
     "firstname": "Ibrahem",
     "lastname": "Abu Shah",
     "age": 24,
-    "email": "ibrahemmad91@gmail.com",
-    "password": "$2b$15$fo5Y83Ws4OL.hKmerDk4X.vPWfZN77WcNknXr8IyLXeC6oBBEJz0q",
+    "email": "ibrahemmad31@gmail.com",
+    "password": "$2b$15$yZg08iqq7L2tzXqcYkrKVe1Prl0LA369c8tI7gyOiuugQfQ/yjOUi",
     "role": "coach",
     "isModerator": true,
-    "isAdmin": false
-  },
-  {
-    "id": "ZnCgp0bCh0LF",
-    "username": "abdool",
-    "firstname": "Ibrahem",
-    "lastname": "Abu Shah",
-    "age": 24,
-    "email": "ibrahemmad61@gmail.com",
-    "password": "$2b$15$q//ngKvbTYxK9qVSxrCRee5Fsvw8aDANn/dkdJnoDeD1MOYOiIV3C",
-    "role": "coach",
-    "isModerator": true,
-    "isAdmin": false
+    "isAdmin": true
   }
 ]

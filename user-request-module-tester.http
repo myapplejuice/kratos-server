@@ -1,52 +1,46 @@
 @HOST = http://localhost:8080/api/v1/user
 
 GET {{HOST}}/all
-Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiR2JxOFNZS1Bvb1JIIiwidXNlcm5hbWUiOiJTaG9ob0tsb2xvMjU1IiwiZmlyc3RuYW1lIjoiSWJyYWhlbSIsImxhc3RuYW1lIjoiQWJ1IFNoYWgiLCJhZ2UiOjI0LCJlbWFpbCI6ImlicmFoZW1tYWQzMUBnbWFpbC5jb20iLCJyb2xlIjoiY29hY2giLCJpc01vZGVyYXRvciI6dHJ1ZSwiaXNBZG1pbiI6dHJ1ZX0sImlhdCI6MTc0NzU0ODczNH0.ATf9Iqat1jltKC6DZJt0URrPGyyhovrpVlZbe4AhRxA
 
-{
-    "id": "eQkZAyydy6QQ",
-    "username": "khaled.20202",
-    "firstname": "Khaled",
-    "lastname": "Shah",
-    "age": 12,
-    "email": "khaled@gmail.com",
-    "role": "coach",
-    "isAdmin": true
-}
 ###
 GET {{HOST}}/single/Mw1Qs9XkVr3E
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiTXcxUXM5WGtWcjNFIiwiZmlyc3RuYW1lIjoiRGFuaWVsIiwibGFzdG5hbWUiOiJIYXJyaXMiLCJ1c2VybmFtZSI6ImRhbmllbC5oYXJyaXM3OSIsImFnZSI6MzksImVtYWlsIjoiZGFuaWVsLmhhcnJpc0BleGFtcGxlLmNvbSIsInJvbGUiOiJjb2FjaCIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE3NDc1MDEzNDF9.GZXw5mlRkbAv24j0nSIZRp_o1K7icROJR5zf06NAbLM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiR2JxOFNZS1Bvb1JIIiwidXNlcm5hbWUiOiJTaG9ob0tsb2xvMjU1IiwiZmlyc3RuYW1lIjoiSWJyYWhlbSIsImxhc3RuYW1lIjoiQWJ1IFNoYWgiLCJhZ2UiOjI0LCJlbWFpbCI6ImlicmFoZW1tYWQzMUBnbWFpbC5jb20iLCJyb2xlIjoiY29hY2giLCJpc01vZGVyYXRvciI6dHJ1ZSwiaXNBZG1pbiI6dHJ1ZX0sImlhdCI6MTc0NzU0ODczNH0.ATf9Iqat1jltKC6DZJt0URrPGyyhovrpVlZbe4AhRxA
 
-###`
+###
 POST {{HOST}}/create
 Content-Type: application/json
 
 {
-    "username": "abdool",
+    "username": "ShohoKlolo255",
     "firstname": "Ibrahem",
     "lastname": "Abu Shah",
     "age": 24,
-    "email": "ibrahemmad61@gmail.com",
+    "email": "ibrahemmad31@gmail.com",
     "password": "Joker525252",
     "role": "coach",
+    "isModerator": true,
     "isAdmin": true
 }
+
 ###
 POST {{HOST}}/login
 Content-Type: application/json
 
 {
-    "authentication": "khaled.20202",
-    "password": "somsom525252"
+    "authentication": "ShohoKlolo255",
+    "password": "Joker525252"
 }
+
 ###
 POST {{HOST}}/login
 Content-Type: application/json
 
 {
-    "authentication": "abed@gmail.com",
-    "password": "khaled52525"
+    "authentication": "ibrahemmad31@gmail.com",
+    "password": "Joker525252"
 }
+
 ###
 PUT {{HOST}}/update/eQkZAyydy6QQ
 Content-Type: application/json
@@ -56,6 +50,7 @@ Content-Type: application/json
     "password": "khaled525252",
     "update": "somsom525252"
 }
+
 ###
 PUT {{HOST}}/update/eQkZAyydy6QQ
 Content-Type: application/json
@@ -65,8 +60,10 @@ Content-Type: application/json
     "password": "somsom525252",
     "update": "khaled@gmail.com"
 }
+
 ###
 DELETE {{HOST}}/delete/Q29IzQmmVgpC
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiTXcxUXM5WGtWcjNFIiwiZmlyc3RuYW1lIjoiRGFuaWVsIiwibGFzdG5hbWUiOiJIYXJyaXMiLCJ1c2VybmFtZSI6ImRhbmllbC5oYXJyaXM3OSIsImFnZSI6MzksImVtYWlsIjoiZGFuaWVsLmhhcnJpc0BleGFtcGxlLmNvbSIsInJvbGUiOiJjb2FjaCIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE3NDc1MDEzNDF9.GZXw5mlRkbAv24j0nSIZRp_o1K7icROJR5zf06NAbLM
+
 ###
 DELETE {{HOST}}/dee/

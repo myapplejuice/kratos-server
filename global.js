@@ -11,12 +11,12 @@ export const __dirname = path.dirname(__filename)
 export const SECRET_KEY = '8455ce10-640d-4a66-845a-8ff187bb2b04'
 
 //MULTER
-const UPLOAD_DIR = path.resolve('uploads');
-if (!fs.existsSync(UPLOAD_DIR)) {
-    fs.mkdirSync(UPLOAD_DIR);
-}
 const STORAGE = multer.diskStorage({
     destination: function (req, file, cb) {
+        const UPLOAD_DIR = path.resolve('uploads');
+        if (!fs.existsSync(UPLOAD_DIR)) {
+            fs.mkdirSync(UPLOAD_DIR);
+        }
         cb(null, UPLOAD_DIR);
     },
     filename: function (req, file, cb) {
@@ -27,8 +27,8 @@ const STORAGE = multer.diskStorage({
     }
 })
 
-export const UPLOAD = multer({
+export const DISK_UPLOAD = multer({
     storage: STORAGE, limits: {
-        fileSize: 50 * 1024 * 1024 // 10MB max per file
+        fileSize: 50 * 1024 * 1024 //50MB max per file (first num controls size in MB)
     }
 })

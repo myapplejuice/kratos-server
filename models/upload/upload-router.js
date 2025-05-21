@@ -1,12 +1,12 @@
 import { Router } from 'express'
 import { UploadController } from './upload-controller.js';
-import { UPLOAD } from '../../global.js';
+import { DISK_UPLOAD } from '../../global.js';
+import { disableTimeout } from '../../middleware/disable-timeout.js';
 
-const uploadRouter = Router()
+const UPLOAD_ROUTER = Router()
 
-uploadRouter
-  .post('/file', UPLOAD.single('file'), UploadController.uploadSingle)
-  .post('/files', UPLOAD.array('files', 5), UploadController.uploadMultiple);
+UPLOAD_ROUTER
+  .post('/file', disableTimeout, DISK_UPLOAD.single('file'), UploadController.uploadSingle)
+  .post('/files', disableTimeout, DISK_UPLOAD.array('files', 5), UploadController.uploadMultiple);
 
-
-export default uploadRouter
+export default UPLOAD_ROUTER

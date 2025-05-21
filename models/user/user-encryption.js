@@ -2,8 +2,6 @@ import { randomBytes } from 'crypto';
 import { genSalt, hash, compare } from 'bcrypt';
 
 export default class UserEncryption {
-    constructor() { }
-
     static generateId(length) {
         //NOT SURE IF WORKING, CHECK NEXT USING CHATGPT
         try {

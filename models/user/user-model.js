@@ -32,6 +32,6 @@ export default class User {
     }
 
     static JSONParse(user) {
-        return new User(user.id, user.username, user.firstname, user.lastname, user.age, user.email, user.password, user.role, user.isAdmin)
+        return new User(user.id, user.username, user.firstname, user.lastname, user.age, user.email, user.password, user.role, user.isModerator, user.isAdmin)
     }
 }

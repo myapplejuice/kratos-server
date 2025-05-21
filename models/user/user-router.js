@@ -3,9 +3,9 @@ import UserController from './user-controller.js';
 import { asyncHandler } from '../../utils/async-handler.js';
 import { authorization } from '../../middleware/authorization.js';
 
-const userRouter = Router()
+const USER_ROUTER = Router()
 
-userRouter
+USER_ROUTER
     .get('/all', authorization ,asyncHandler(UserController.getUsers))
     .get('/single/:id', authorization, asyncHandler(UserController.getUserById))
     .post('/create', asyncHandler(UserController.createUser))
@@ -13,4 +13,4 @@ userRouter
     .put('/update/:id', asyncHandler(UserController.updateUser))
     .delete('/delete/:id', authorization, asyncHandler(UserController.deleteUser))
 
-export default userRouter
+export default USER_ROUTER
